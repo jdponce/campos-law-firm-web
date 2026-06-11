@@ -1,0 +1,111 @@
+/* PROCESO DE 5 PASOS */
+.process {
+    background: #f8f9fa;
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.step {
+    text-align: center;
+    padding: 30px 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+
+.step:hover {
+    transform: translateY(-5px);
+}
+
+.step-number {
+    width: 50px;
+    height: 50px;
+    background: #0056b3;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.step h3 {
+    margin-bottom: 15px;
+    color: #0a2540;
+}
+
+.step p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* TESTIMONIOS */
+.testimonials {
+    background: linear-gradient(135deg, #0a2540 0%, #1e3a6f 100%);
+    color: white;
+}
+
+.testimonials .section-header h2,
+.testimonials .section-header p {
+    color: white;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.testimonial-card {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255,255,255,0.15);
+}
+
+.testimonial-card i {
+    font-size: 2rem;
+    color: #0056b3;
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+.testimonial-card p {
+    font-style: italic;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.testimonial-card h4 {
+    color: #ffd700;
+    font-weight: 600;
+}
+
+.plans-note {
+    text-align: center;
+    margin-top: 30px;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.team-bio {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.5;
+}
