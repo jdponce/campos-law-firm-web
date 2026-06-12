@@ -56,7 +56,7 @@ function initializeScrollAnimations() {
 
 function initializeCounters() {
   const counters = document.querySelectorAll('.counter');
-  const speed = 2000; // duración en ms
+  const speed = 2000;
   
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -77,7 +77,7 @@ function initializeCounters() {
         };
         
         updateCounter();
-        observer.unobserve(counter); // Solo una vez
+        observer.unobserve(counter);
       }
     });
   }, {
