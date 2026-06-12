@@ -1,27 +1,5 @@
-// Cargar Header y Footer
+// Header scroll effect y menú móvil
 document.addEventListener('DOMContentLoaded', function() {
-  // Cargar header
-  fetch('header.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('header-container').innerHTML = data;
-      initializeHeader();
-    })
-    .catch(error => console.error('Error cargando header:', error));
-  
-  // Cargar footer
-  fetch('footer.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('footer-container').innerHTML = data;
-    })
-    .catch(error => console.error('Error cargando footer:', error));
-  
-  // Animaciones al scroll
-  initializeScrollAnimations();
-});
-
-function initializeHeader() {
   const menuBtn = document.getElementById('menuBtn');
   const nav = document.getElementById('nav');
   const header = document.querySelector('.header');
@@ -52,7 +30,10 @@ function initializeHeader() {
       header?.classList.remove('scrolled');
     }
   });
-}
+  
+  // Animaciones al scroll
+  initializeScrollAnimations();
+});
 
 function initializeScrollAnimations() {
   const observer = new IntersectionObserver((entries) => {

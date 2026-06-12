@@ -18,14 +18,40 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Header Container -->
-  <div id="header-container"></div>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="logo">
+          <img src="images/logotipo.webp" alt="Campos Law Firm" class="logo-img">
+        </a>
+        
+        <nav class="nav" id="nav">
+          <ul>
+            <li><a href="index.html" class="active">Inicio</a></li>
+            <li><a href="inmigracion.html">Inmigración</a></li>
+            <li><a href="familia.html">Familia</a></li>
+            <li><a href="criminal.html">Criminal</a></li>
+            <li><a href="negocios.html">Negocios</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+        
+        <div class="header-actions">
+          <a href="contacto.html" class="btn btn-primary btn-header">Consulta Gratis</a>
+          <div class="menu-btn" id="menuBtn">
+            <i class="fas fa-bars"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
 
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
-      <h1>Abogados en los Estados Unidos.<br><span>Soluciones Legales Reales.</span></h1>
-      <p>Su bufete de servicios completos para inmigración, defensa penal, derecho familiar, lesiones personales y derecho empresarial. Representación estratégica y confiable.</p>
+      <h1>Abogados en los Estados Unidos.<span>Soluciones Legales Reales.</span></h1>
+      <p>Su bufete de servicios completos para inmigración, defensa penal, derecho familiar y derecho empresarial. Representación estratégica y confiable.</p>
       <div class="hero-buttons">
         <a href="contacto.html" class="btn btn-primary">
           <i class="fas fa-phone"></i>
@@ -98,6 +124,30 @@
     </div>
   </section>
 
+  <!-- Estadísticas -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item animate-on-scroll">
+          <h3>123,000+</h3>
+          <p>Clientes Ayudados</p>
+        </div>
+        <div class="stat-item animate-on-scroll">
+          <h3>$5M+</h3>
+          <p>Recuperados para Clientes</p>
+        </div>
+        <div class="stat-item animate-on-scroll">
+          <h3>98%</h3>
+          <p>Tasa de Éxito</p>
+        </div>
+        <div class="stat-item animate-on-scroll">
+          <h3>52,170</h3>
+          <p>Clientes Satisfechos</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Planes y Precios -->
   <section class="pricing">
     <div class="container">
@@ -152,7 +202,7 @@
             <p>Beneficios legales y de protección contra robo de identidad diseñados para sus empleados.</p>
           </div>
           <div class="pricing-price">
-            <span class="amount">Personalizado</span>
+            <span class="amount" style="font-size: 2rem;">Personalizado</span>
           </div>
           <ul class="pricing-features">
             <li>Plan personalizado para su empresa</li>
@@ -166,30 +216,6 @@
       </div>
       
       <p style="text-align: center; margin-top: 30px; color: #666; font-size: 0.9rem;">*Cuando se factura anualmente. Aplican términos y condiciones.</p>
-    </div>
-  </section>
-
-  <!-- Estadísticas -->
-  <section class="stats">
-    <div class="container">
-      <div class="stats-grid">
-        <div class="stat-item animate-on-scroll">
-          <h3>123,000+</h3>
-          <p>Clientes Ayudados</p>
-        </div>
-        <div class="stat-item animate-on-scroll">
-          <h3>$5M+</h3>
-          <p>Recuperados para Clientes</p>
-        </div>
-        <div class="stat-item animate-on-scroll">
-          <h3>98%</h3>
-          <p>Tasa de Éxito</p>
-        </div>
-        <div class="stat-item animate-on-scroll">
-          <h3>52,170</h3>
-          <p>Clientes Satisfechos</p>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -245,9 +271,6 @@
       
       <div class="testimonials-grid">
         <div class="testimonial-card animate-on-scroll">
-          <div class="testimonial-avatar">
-            <img src="images/testimonial-1.webp" alt="Cliente">
-          </div>
           <div class="stars">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
@@ -261,9 +284,6 @@
         </div>
         
         <div class="testimonial-card animate-on-scroll">
-          <div class="testimonial-avatar">
-            <img src="images/testimonial-2.webp" alt="Cliente">
-          </div>
           <div class="stars">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
@@ -277,9 +297,6 @@
         </div>
         
         <div class="testimonial-card animate-on-scroll">
-          <div class="testimonial-avatar">
-            <img src="images/testimonial-3.webp" alt="Cliente">
-          </div>
           <div class="stars">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
@@ -295,47 +312,8 @@
     </div>
   </section>
 
-  <!-- Noticias -->
-  <section class="news">
-    <div class="container">
-      <div class="section-header animate-on-scroll">
-        <h2>Últimas Noticias Legales</h2>
-        <p>Manténgase informado sobre cambios legales importantes</p>
-      </div>
-      
-      <div class="news-grid">
-        <article class="news-card animate-on-scroll">
-          <div class="news-img" style="background-image: url('images/news-1.webp')"></div>
-          <div class="news-content">
-            <span class="news-date"><i class="far fa-calendar"></i> 15 de Marzo, 2026</span>
-            <h3>Legislación EB-5 Pendiente</h3>
-            <p>Cambios en el programa de visas de inversor podrían afectar a miles de familias. Conozca los detalles.</p>
-          </div>
-        </article>
-        
-        <article class="news-card animate-on-scroll">
-          <div class="news-img" style="background-image: url('images/news-2.webp')"></div>
-          <div class="news-content">
-            <span class="news-date"><i class="far fa-calendar"></i> 10 de Marzo, 2026</span>
-            <h3>Caso de Lesiones Personales Resuelto</h3>
-            <p>Acuerdo de $2.5 millones para víctima de accidente automovilístico. Justicia para nuestro cliente.</p>
-          </div>
-        </article>
-        
-        <article class="news-card animate-on-scroll">
-          <div class="news-img" style="background-image: url('images/news-3.webp')"></div>
-          <div class="news-content">
-            <span class="news-date"><i class="far fa-calendar"></i> 5 de Marzo, 2026</span>
-            <h3>Nuevas Políticas de Inmigración</h3>
-            <p>Lo que necesita saber sobre las últimas órdenes ejecutivas y cómo afectan su caso.</p>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Final -->
-  <section class="hero" style="min-height: 60vh; padding: 120px 0;">
+  <!-- CTA Final con Parallax -->
+  <section class="cta-final">
     <div class="hero-content">
       <h2>¿Listo para Resolver Su Caso Legal?</h2>
       <p>Nuestro equipo está listo para ayudarle. Complete el formulario y reciba la asesoría legal que necesita.</p>
@@ -352,8 +330,57 @@
     </div>
   </section>
 
-  <!-- Footer Container -->
-  <div id="footer-container"></div>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>Campos <span>Law Firm</span></h3>
+          <p>Firma de abogados de alto nivel en Estados Unidos. Representación estratégica y confiable en inmigración, derecho familiar, defensa criminal y más.</p>
+          <div class="social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Áreas de Práctica</h4>
+          <ul>
+            <li><a href="inmigracion.html">Inmigración</a></li>
+            <li><a href="familia.html">Derecho Familiar</a></li>
+            <li><a href="criminal.html">Defensa Criminal</a></li>
+            <li><a href="negocios.html">Derecho de Negocios</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Enlaces Rápidos</h4>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="#proceso">Cómo Trabajamos</a></li>
+            <li><a href="#testimonios">Testimonios</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <ul class="contact-info">
+            <li><i class="fas fa-map-marker-alt"></i> Estados Unidos</li>
+            <li><i class="fas fa-phone"></i> (xxx) xxx-xxxx</li>
+            <li><i class="fas fa-envelope"></i> info@camposlawfirm.com</li>
+            <li><i class="fas fa-clock"></i> Lun - Vie: 9:00 AM - 6:00 PM</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 Campos Law Firm. Todos los derechos reservados. | <a href="#" style="color: rgba(255,255,255,0.5);">Política de Privacidad</a></p>
+      </div>
+    </div>
+  </footer>
 
   <!-- Scripts -->
   <script src="script.js"></script>
