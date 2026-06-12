@@ -13,6 +13,8 @@
   --shadow-sm: 0 2px 10px rgba(0,0,0,0.05);
   --shadow-md: 0 5px 20px rgba(0,0,0,0.1);
   --shadow-lg: 0 10px 40px rgba(0,0,0,0.15);
+  --gradient-btn: linear-gradient(135deg, #0056b3 0%, #0077e6 100%);
+  --gradient-hero: linear-gradient(135deg, rgba(38,50,66,0.85) 0%, rgba(26,37,51,0.75) 100%);
 }
 
 * {
@@ -39,7 +41,7 @@ body {
 }
 
 /* ========================================
-   HEADER
+   HEADER - LOGO A LA IZQUIERDA
 ======================================== */
 .header {
   position: fixed;
@@ -68,28 +70,25 @@ body {
   flex-shrink: 0;
   display: flex;
   align-items: center;
-  justify-content: center;
-  min-width: 220px;
+  margin-right: auto;
 }
 
 .logo-img {
-  height: 70px;
+  height: 75px;
   width: auto;
   transition: var(--transition);
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.08));
 }
 
 .header.scrolled .logo-img {
-  height: 60px;
+  height: 65px;
 }
 
 .nav ul {
   display: flex;
-  gap: 30px;
+  gap: 35px;
   list-style: none;
   align-items: center;
-  flex-wrap: wrap;
-  justify-content: center;
 }
 
 .nav a {
@@ -98,7 +97,9 @@ body {
   font-weight: 500;
   transition: var(--transition);
   position: relative;
-  padding: 5px 0;
+  padding: 8px 0;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
 }
 
 .nav a::after {
@@ -133,6 +134,12 @@ body {
   padding: 12px 28px;
   font-size: 0.9rem;
   white-space: nowrap;
+  background: var(--gradient-btn);
+  box-shadow: 0 4px 15px rgba(0,86,179,0.3);
+}
+
+.btn-header:hover {
+  box-shadow: 0 6px 20px rgba(0,86,179,0.4);
 }
 
 .menu-btn {
@@ -143,17 +150,17 @@ body {
 }
 
 /* ========================================
-   HERO SECTION CON ANIMACIONES
+   HERO SECTION - IMAGEN VISIBLE
 ======================================== */
 .hero {
   min-height: 100vh;
-  background: linear-gradient(135deg, var(--primary-color) 0%, #1a2533 100%);
   display: flex;
   align-items: center;
   text-align: center;
   padding-top: 100px;
   position: relative;
   overflow: hidden;
+  background: url('images/hero-bg.webp') center/cover no-repeat;
 }
 
 .hero::before {
@@ -163,19 +170,13 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('images/hero-bg.webp') center/cover;
-  opacity: 0.15;
-  animation: heroImageFade 1.5s ease-out;
-}
-
-@keyframes heroImageFade {
-  from { opacity: 0; transform: scale(1.1); }
-  to { opacity: 0.15; transform: scale(1); }
+  background: var(--gradient-hero);
+  z-index: 1;
 }
 
 .hero-content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   max-width: 900px;
   margin: 0 auto;
   padding: 0 20px;
@@ -189,14 +190,18 @@ body {
   line-height: 1.2;
   opacity: 0;
   animation: fadeInUp 1s ease forwards;
-  animation-delay: 0.2s;
+  animation-delay: 0.3s;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 
 .hero-content h1 span {
+  display: block;
   color: var(--accent-color);
   font-style: italic;
-  display: block;
   margin-top: 10px;
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.5s;
 }
 
 .hero-content p {
@@ -206,7 +211,8 @@ body {
   line-height: 1.8;
   opacity: 0;
   animation: fadeInUp 1s ease forwards;
-  animation-delay: 0.4s;
+  animation-delay: 0.7s;
+  text-shadow: 0 1px 5px rgba(0,0,0,0.2);
 }
 
 .hero-buttons {
@@ -216,7 +222,7 @@ body {
   flex-wrap: wrap;
   opacity: 0;
   animation: fadeInUp 1s ease forwards;
-  animation-delay: 0.6s;
+  animation-delay: 0.9s;
 }
 
 .btn {
@@ -236,13 +242,12 @@ body {
 }
 
 .btn-primary {
-  background: var(--secondary-color);
+  background: var(--gradient-btn);
   color: var(--white);
   box-shadow: 0 4px 15px rgba(0,86,179,0.3);
 }
 
 .btn-primary:hover {
-  background: #004099;
   transform: translateY(-3px);
   box-shadow: 0 8px 25px rgba(0,86,179,0.4);
 }
@@ -286,7 +291,7 @@ section {
 }
 
 /* ========================================
-   ÁREAS DE PRÁCTICA - GRID 2x2 MEJORADO
+   ÁREAS DE PRÁCTICA - ESTILO LEGALSHIELD
 ======================================== */
 .practice-areas {
   background: var(--bg-light);
@@ -318,7 +323,7 @@ section {
 }
 
 .area-card-image {
-  height: 180px;
+  height: 200px;
   background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
   display: flex;
   align-items: center;
@@ -377,7 +382,39 @@ section {
 }
 
 /* ========================================
-   PRECIOS - MEJOR DISTRIBUCIÓN
+   ESTADÍSTICAS CON CONTADOR ANIMADO
+======================================== */
+.stats {
+  background: linear-gradient(135deg, var(--primary-color) 0%, #1a2533 100%);
+  color: var(--white);
+  padding: 80px 0;
+  position: relative;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  text-align: center;
+}
+
+.stat-item h3 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  color: var(--accent-color);
+}
+
+.stat-item p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+}
+
+/* ========================================
+   PRECIOS
 ======================================== */
 .pricing {
   background: var(--white);
@@ -417,7 +454,7 @@ section {
   top: -12px;
   left: 50%;
   transform: translateX(-50%);
-  background: var(--secondary-color);
+  background: var(--gradient-btn);
   color: var(--white);
   padding: 5px 20px;
   border-radius: 20px;
@@ -503,7 +540,7 @@ section {
 }
 
 /* ========================================
-   PROCESO - DISEÑO PROFESIONAL
+   PROCESO
 ======================================== */
 .process {
   background: var(--bg-light);
@@ -535,7 +572,7 @@ section {
 .step-number {
   width: 65px;
   height: 65px;
-  background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+  background: var(--gradient-btn);
   color: var(--white);
   font-size: 1.8rem;
   font-weight: bold;
@@ -558,34 +595,6 @@ section {
   color: var(--text-light);
   font-size: 0.9rem;
   line-height: 1.6;
-}
-
-/* ========================================
-   ESTADÍSTICAS
-======================================== */
-.stats {
-  background: linear-gradient(135deg, var(--primary-color) 0%, #1a2533 100%);
-  color: var(--white);
-  padding: 80px 0;
-}
-
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
-  text-align: center;
-}
-
-.stat-item h3 {
-  font-size: 3.5rem;
-  font-weight: 800;
-  margin-bottom: 10px;
-  color: var(--accent-color);
-}
-
-.stat-item p {
-  font-size: 1.1rem;
-  opacity: 0.9;
 }
 
 /* ========================================
@@ -652,10 +661,7 @@ section {
   justify-content: center;
   text-align: center;
   padding: 120px 0;
-  background: linear-gradient(135deg, var(--primary-color) 0%, #1a2533 100%);
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
+  background: url('images/cta-bg.webp') center/cover no-repeat fixed;
   overflow: hidden;
 }
 
@@ -666,13 +672,13 @@ section {
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('images/cta-bg.webp') center/cover;
-  opacity: 0.2;
+  background: var(--gradient-hero);
+  z-index: 1;
 }
 
 .cta-final .hero-content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .cta-final h2 {
@@ -680,6 +686,7 @@ section {
   color: var(--white);
   margin-bottom: 20px;
   font-weight: 800;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 
 .cta-final p {
@@ -689,6 +696,7 @@ section {
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
+  text-shadow: 0 1px 5px rgba(0,0,0,0.2);
 }
 
 /* ========================================

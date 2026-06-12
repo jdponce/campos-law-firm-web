@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', function() {
         : '<i class="fas fa-bars"></i>';
     });
     
-    // Cerrar menú al hacer click en un enlace
     nav.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         nav.classList.remove('active');
@@ -33,6 +32,9 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Animaciones al scroll
   initializeScrollAnimations();
+  
+  // Contador animado
+  initializeCounters();
 });
 
 function initializeScrollAnimations() {
@@ -50,6 +52,39 @@ function initializeScrollAnimations() {
   document.querySelectorAll('.animate-on-scroll').forEach(el => {
     observer.observe(el);
   });
+}
+
+function initializeCounters() {
+  const counters = document.querySelectorAll('.counter');
+  const speed = 2000; // duración en ms
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const counter = entry.target;
+        const target = +counter.getAttribute('data-target');
+        const increment = target / (speed / 16);
+        let current = 0;
+        
+        const updateCounter = () => {
+          current += increment;
+          if (current < target) {
+            counter.innerText = Math.ceil(current).toLocaleString();
+            requestAnimationFrame(updateCounter);
+          } else {
+            counter.innerText = target.toLocaleString();
+          }
+        };
+        
+        updateCounter();
+        observer.unobserve(counter); // Solo una vez
+      }
+    });
+  }, {
+    threshold: 0.5
+  });
+  
+  counters.forEach(counter => observer.observe(counter));
 }
 
 // Smooth scroll para enlaces internos
