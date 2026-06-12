@@ -40,7 +40,7 @@ body {
 }
 
 /* ========================================
-   HEADER - LOGO A LA IZQUIERDA
+   HEADER
 ======================================== */
 .header {
   position: fixed;
@@ -149,7 +149,7 @@ body {
 }
 
 /* ========================================
-   HERO SECTION - IMAGEN VISIBLE
+   HERO SECTION
 ======================================== */
 .hero {
   min-height: 100vh;
@@ -286,7 +286,7 @@ section {
 }
 
 /* ========================================
-   ÁREAS DE PRÁCTICA - ESTILO LEGALSHIELD
+   ÁREAS DE PRÁCTICA
 ======================================== */
 .practice-areas {
   background: var(--bg-light);
@@ -367,7 +367,7 @@ section {
 }
 
 /* ========================================
-   ESTADÍSTICAS CON CONTADOR ANIMADO
+   ESTADÍSTICAS
 ======================================== */
 .stats {
   background: linear-gradient(135deg, var(--primary-color) 0%, #1a2533 100%);
@@ -397,10 +397,66 @@ section {
 }
 
 /* ========================================
-   PRECIOS
+   PRECIOS CON SWITCH
 ======================================== */
 .pricing {
   background: var(--white);
+}
+
+.pricing-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 50px;
+}
+
+.pricing-toggle span {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-light);
+  transition: color 0.3s;
+}
+
+.pricing-toggle span.active {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.toggle-switch {
+  position: relative;
+  width: 60px;
+  height: 32px;
+  background: var(--secondary-color);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.toggle-switch::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 26px;
+  height: 26px;
+  background: var(--white);
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.toggle-switch.annual::after {
+  transform: translateX(28px);
+}
+
+.discount-badge {
+  background: #10b981;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
 }
 
 .pricing-grid {
@@ -477,6 +533,10 @@ section {
   margin-bottom: 25px;
   padding: 20px 0;
   border-bottom: 2px solid var(--bg-light);
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .pricing-price .amount {
@@ -484,12 +544,21 @@ section {
   font-weight: 800;
   color: var(--primary-color);
   display: inline-block;
+  transition: all 0.3s ease;
 }
 
 .pricing-price .period {
   color: var(--text-light);
   font-size: 0.95rem;
   margin-left: 5px;
+}
+
+.pricing-price .annual-note {
+  display: block;
+  font-size: 0.85rem;
+  color: #10b981;
+  margin-top: 5px;
+  font-weight: 500;
 }
 
 .pricing-features {

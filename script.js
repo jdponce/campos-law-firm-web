@@ -35,6 +35,9 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Contador animado
   initializeCounters();
+  
+  // Switch de precios
+  initializePricingToggle();
 });
 
 function initializeScrollAnimations() {
@@ -85,6 +88,38 @@ function initializeCounters() {
   });
   
   counters.forEach(counter => observer.observe(counter));
+}
+
+function initializePricingToggle() {
+  const toggle = document.getElementById('pricingToggle');
+  const monthlyLabel = document.getElementById('monthlyLabel');
+  const annualLabel = document.getElementById('annualLabel');
+  const amounts = document.querySelectorAll('.pricing-price .amount[data-monthly]');
+  const annualNotes = document.querySelectorAll('.annual-note');
+  
+  let isAnnual = false;
+  
+  toggle.addEventListener('click', () => {
+    isAnnual = !isAnnual;
+    
+    // Toggle visual
+    toggle.classList.toggle('annual');
+    monthlyLabel.classList.toggle('active');
+    annualLabel.classList.toggle('active');
+    
+    // Actualizar precios
+    amounts.forEach(amount => {
+      const monthly = parseFloat(amount.getAttribute('data-monthly'));
+      const annual = parseFloat(amount.getAttribute('data-annual'));
+      const price = isAnnual ? annual : monthly;
+      amount.innerText = '$' + price;
+    });
+    
+    // Mostrar/ocultar nota anual
+    annualNotes.forEach(note => {
+      note.style.display = isAnnual ? 'block' : 'none';
+    });
+  });
 }
 
 // Smooth scroll para enlaces internos

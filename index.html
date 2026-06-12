@@ -115,7 +115,7 @@
     </div>
   </section>
 
-  <!-- Estadísticas con Contador Animado -->
+  <!-- Estadísticas -->
   <section class="stats">
     <div class="container">
       <div class="stats-grid">
@@ -139,12 +139,20 @@
     </div>
   </section>
 
-  <!-- Planes y Precios -->
+  <!-- Planes y Precios con Switch -->
   <section class="pricing">
     <div class="container">
       <div class="section-header animate-on-scroll">
         <h2>Planes Accesibles para Cada Necesidad</h2>
         <p>Elija el plan que mejor se adapte a sus necesidades legales. Sin costos ocultos.</p>
+      </div>
+      
+      <!-- Toggle Mensual/Anual -->
+      <div class="pricing-toggle animate-on-scroll">
+        <span class="toggle-label active" id="monthlyLabel">Mensual</span>
+        <div class="toggle-switch" id="pricingToggle"></div>
+        <span class="toggle-label" id="annualLabel">Anual</span>
+        <span class="discount-badge">Ahorre 10%</span>
       </div>
       
       <div class="pricing-grid">
@@ -154,8 +162,9 @@
             <p>Asesoría legal ilimitada en asuntos personales y familiares con abogados con promedio de 22 años de experiencia.</p>
           </div>
           <div class="pricing-price">
-            <span class="amount">$35.95</span>
-            <span class="period">+/mes*</span>
+            <span class="amount" data-monthly="125" data-annual="112.50">$125</span>
+            <span class="period">/mes</span>
+            <span class="annual-note" style="display: none;">Facturado $1,350/año (Ahorra $150)</span>
           </div>
           <ul class="pricing-features">
             <li>Consultas legales ilimitadas</li>
@@ -173,8 +182,9 @@
             <p>Asesoría legal en asuntos empresariales, incluyendo revisión de documentos, cobranza y más.</p>
           </div>
           <div class="pricing-price">
-            <span class="amount">$53.95</span>
-            <span class="period">+/mes*</span>
+            <span class="amount" data-monthly="255" data-annual="229.50">$255</span>
+            <span class="period">/mes</span>
+            <span class="annual-note" style="display: none;">Facturado $2,754/año (Ahorra $306)</span>
           </div>
           <ul class="pricing-features">
             <li>Todo del plan Personal</li>
@@ -205,8 +215,6 @@
           <a href="contacto.html" class="btn btn-outline" style="color: #263242; border-color: #263242;">Contactar Ventas</a>
         </div>
       </div>
-      
-      <p style="text-align: center; margin-top: 30px; color: #666; font-size: 0.9rem;">*Cuando se factura anualmente. Aplican términos y condiciones.</p>
     </div>
   </section>
 
@@ -303,7 +311,7 @@
     </div>
   </section>
 
-  <!-- CTA Final con Parallax REAL -->
+  <!-- CTA Final con Parallax -->
   <section class="cta-final">
     <div class="hero-content">
       <h2>¿Listo para Resolver Su Caso Legal?</h2>
