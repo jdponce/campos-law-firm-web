@@ -34,6 +34,14 @@
         
         <div class="header-actions">
           <a href="contacto.html" class="btn btn-primary btn-header">Consulta Gratis</a>
+          
+          <div class="header-icons">
+            <i class="fas fa-user header-icon" id="userIcon" title="Iniciar Sesión"></i>
+            <i class="fas fa-shopping-cart header-icon" title="Carrito">
+              <span class="cart-badge">0</span>
+            </i>
+          </div>
+          
           <div class="menu-btn" id="menuBtn">
             <i class="fas fa-bars"></i>
           </div>
@@ -42,15 +50,40 @@
     </div>
   </header>
 
+  <!-- Modal Login -->
+  <div class="modal-overlay" id="loginModal">
+    <div class="modal">
+      <i class="fas fa-times modal-close" id="modalClose"></i>
+      <h3>Iniciar Sesión</h3>
+      <p>Accede a tu cuenta de Campos Law Firm</p>
+      
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="email">Correo Electrónico</label>
+          <input type="email" id="email" placeholder="tu@email.com" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="password">Contraseña</label>
+          <input type="password" id="password" placeholder="••••••••" required>
+        </div>
+        
+        <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+        
+        <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+      </form>
+    </div>
+  </div>
+
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
       <h1>Abogados en los Estados Unidos.<span>Soluciones Legales Reales.</span></h1>
-      <p>Su bufete de servicios completos para inmigración, defensa penal, derecho familiar y derecho empresarial. Representación estratégica y confiable.</p>
+      <p>Tu bufete de servicios completos para inmigración, defensa penal, derecho familiar y derecho empresarial. Representación estratégica y confiable.</p>
       <div class="hero-buttons">
         <a href="contacto.html" class="btn btn-primary">
           <i class="fas fa-phone"></i>
-          Cuéntenos Sobre Su Caso
+          Cuéntanos Sobre Tu Caso
         </a>
         <a href="#areas" class="btn btn-outline">
           Ver Áreas de Práctica
@@ -144,7 +177,7 @@
     <div class="container">
       <div class="section-header animate-on-scroll">
         <h2>Planes Accesibles para Cada Necesidad</h2>
-        <p>Elija el plan que mejor se adapte a sus necesidades legales. Sin costos ocultos.</p>
+        <p>Elige el plan que mejor se adapte a tus necesidades legales. Sin costos ocultos.</p>
       </div>
       
       <!-- Toggle Mensual/Anual -->
@@ -169,7 +202,7 @@
           <ul class="pricing-features">
             <li>Consultas legales ilimitadas</li>
             <li>Revisión de documentos</li>
-            <li>Cartas y llamadas en su nombre</li>
+            <li>Cartas y llamadas en tu nombre</li>
             <li>Descuento en otros servicios legales</li>
             <li>Atención bilingüe</li>
           </ul>
@@ -200,13 +233,13 @@
         <div class="pricing-card animate-on-scroll">
           <div class="pricing-header">
             <h3>Empresarial</h3>
-            <p>Beneficios legales y de protección contra robo de identidad diseñados para sus empleados.</p>
+            <p>Beneficios legales y de protección contra robo de identidad diseñados para tus empleados.</p>
           </div>
           <div class="pricing-price">
             <span class="amount" style="font-size: 2rem;">Personalizado</span>
           </div>
           <ul class="pricing-features">
-            <li>Plan personalizado para su empresa</li>
+            <li>Plan personalizado para tu empresa</li>
             <li>Protección legal para empleados</li>
             <li>Protección contra robo de identidad</li>
             <li>Tranquilidad y seguridad</li>
@@ -223,38 +256,38 @@
     <div class="container">
       <div class="section-header animate-on-scroll">
         <h2>Cómo Trabajamos</h2>
-        <p>Un proceso simple de 5 pasos para resolver su caso legal</p>
+        <p>Un proceso simple de 5 pasos para resolver tu caso legal</p>
       </div>
       
       <div class="process-steps">
         <div class="step animate-on-scroll">
           <div class="step-number">1</div>
           <h3>Consulta Gratis</h3>
-          <p>Escuchamos su caso sin prisa ni presión. Una conversación honesta para entender cómo ayudarle.</p>
+          <p>Escuchamos tu caso sin prisa ni presión. Una conversación honesta para entender cómo ayudarte.</p>
         </div>
         
         <div class="step animate-on-scroll">
           <div class="step-number">2</div>
           <h3>Evaluación y Estrategia</h3>
-          <p>Analizamos su situación y le explicamos claramente qué esperar, tiempos y la mejor estrategia legal.</p>
+          <p>Analizamos tu situación y te explicamos claramente qué esperar, tiempos y la mejor estrategia legal.</p>
         </div>
         
         <div class="step animate-on-scroll">
           <div class="step-number">3</div>
           <h3>Recolección de Documentos</h3>
-          <p>Le decimos exactamente qué documentos necesita. Nuestro equipo le guía paso a paso.</p>
+          <p>Te decimos exactamente qué documentos necesitas. Nuestro equipo te guía paso a paso.</p>
         </div>
         
         <div class="step animate-on-scroll">
           <div class="step-number">4</div>
           <h3>Revisión Legal</h3>
-          <p>Nuestros abogados revisan cuidadosamente su caso antes de presentarlo para asegurar que esté completo y fuerte.</p>
+          <p>Nuestros abogados revisan cuidadosamente tu caso antes de presentarlo para asegurar que esté completo y fuerte.</p>
         </div>
         
         <div class="step animate-on-scroll">
           <div class="step-number">5</div>
           <h3>Presentación y Seguimiento</h3>
-          <p>Presentamos su caso y monitoreamos cada actualización. Le informamos hasta recibir la decisión final.</p>
+          <p>Presentamos tu caso y monitoreamos cada actualización. Te informamos hasta recibir la decisión final.</p>
         </div>
       </div>
     </div>
@@ -314,18 +347,33 @@
   <!-- CTA Final con Parallax -->
   <section class="cta-final">
     <div class="hero-content">
-      <h2>¿Listo para Resolver Su Caso Legal?</h2>
-      <p>Nuestro equipo está listo para ayudarle.</p>
+      <h2>¿Listo para Resolver Tu Caso Legal?</h2>
+      <p>Nuestro equipo está listo para ayudarte.</p>
       <div class="hero-buttons">
         <a href="contacto.html" class="btn btn-primary">
           <i class="fas fa-paper-plane"></i>
-          Contáctenos Ahora
+          Contáctanos Ahora
         </a>
-        <a href="tel:xxx-xxx-xxxx" class="btn btn-outline">
+        <a href="tel:+18449226767" class="btn btn-outline">
           <i class="fas fa-phone"></i>
-          (xxx) xxx-xxxx
+          +1 (844) 922-6767
         </a>
       </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter">
+    <div class="container">
+      <h3>Suscríbete a Nuestro Boletín</h3>
+      <p>Recibe consejos legales, noticias y actualizaciones directamente en tu correo.</p>
+      
+      <form class="newsletter-form" id="newsletterForm">
+        <input type="email" placeholder="Tu correo electrónico" required>
+        <button type="submit">Suscribirse</button>
+      </form>
+      
+      <p class="newsletter-note">Al suscribirte, aceptas recibir correos de Campos Law Firm. Consulta nuestra <a href="#">Política de Privacidad</a>.</p>
     </div>
   </section>
 
@@ -334,7 +382,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col">
-          <h3>Campos <span>Law Firm</span></h3>
+          <img src="images/logo-white.webp" alt="Campos Law Firm" class="footer-logo">
           <p>Firma de abogados de alto nivel en Estados Unidos. Representación estratégica y confiable en inmigración, derecho familiar, defensa criminal y más.</p>
           <div class="social">
             <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -366,11 +414,36 @@
         
         <div class="footer-col">
           <h4>Contacto</h4>
-          <ul class="contact-info">
-            <li><i class="fas fa-map-marker-alt"></i> Estados Unidos</li>
-            <li><i class="fas fa-phone"></i> (xxx) xxx-xxxx</li>
-            <li><i class="fas fa-envelope"></i> info@camposlawfirm.com</li>
-            <li><i class="fas fa-clock"></i> Lun - Vie: 9:00 AM - 6:00 PM</li>
+          <ul class="phone-list">
+            <li>
+              <div>
+                <strong>Service Line New Case:</strong>
+                <span class="flag">🇸</span> <a href="tel:+18449226767">+1 (844) 922-6767</a>
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>Client Services Line (Active Cases):</strong>
+                <span class="flag">🇺🇸</span> <a href="tel:+18338532595">+1 (833) 853-2595</a>
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>Service Line for Colombia:</strong>
+                <span class="flag">🇨🇴</span> <a href="tel:+573007728384">+57 300 772 8384</a>
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>Service Line for Mexico:</strong>
+                <span class="flag">🇲</span> <a href="tel:+523319342017">+52 33 1934 2017</a>
+              </div>
+            </li>
+            <li>
+              <div>
+                <span class="flag">️</span> <a href="mailto:info@camposlawfirm.com">info@camposlawfirm.com</a>
+              </div>
+            </li>
           </ul>
         </div>
       </div>

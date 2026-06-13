@@ -3,6 +3,11 @@ document.addEventListener('DOMContentLoaded', function() {
   const menuBtn = document.getElementById('menuBtn');
   const nav = document.getElementById('nav');
   const header = document.querySelector('.header');
+  const userIcon = document.getElementById('userIcon');
+  const loginModal = document.getElementById('loginModal');
+  const modalClose = document.getElementById('modalClose');
+  const loginForm = document.getElementById('loginForm');
+  const newsletterForm = document.getElementById('newsletterForm');
   
   // Menú móvil
   if (menuBtn && nav) {
@@ -29,6 +34,42 @@ document.addEventListener('DOMContentLoaded', function() {
       header?.classList.remove('scrolled');
     }
   });
+  
+  // Modal Login
+  if (userIcon && loginModal) {
+    userIcon.addEventListener('click', () => {
+      loginModal.classList.add('active');
+    });
+  }
+  
+  if (modalClose) {
+    modalClose.addEventListener('click', () => {
+      loginModal.classList.remove('active');
+    });
+  }
+  
+  if (loginModal) {
+    loginModal.addEventListener('click', (e) => {
+      if (e.target === loginModal) {
+        loginModal.classList.remove('active');
+      }
+    });
+  }
+  
+  if (loginForm) {
+    loginForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Funcionalidad de login en desarrollo');
+    });
+  }
+  
+  if (newsletterForm) {
+    newsletterForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('¡Gracias por suscribirte! (Funcionalidad en desarrollo)');
+      newsletterForm.reset();
+    });
+  }
   
   // Animaciones al scroll
   initializeScrollAnimations();
@@ -102,12 +143,10 @@ function initializePricingToggle() {
   toggle.addEventListener('click', () => {
     isAnnual = !isAnnual;
     
-    // Toggle visual
     toggle.classList.toggle('annual');
     monthlyLabel.classList.toggle('active');
     annualLabel.classList.toggle('active');
     
-    // Actualizar precios
     amounts.forEach(amount => {
       const monthly = parseFloat(amount.getAttribute('data-monthly'));
       const annual = parseFloat(amount.getAttribute('data-annual'));
@@ -115,7 +154,6 @@ function initializePricingToggle() {
       amount.innerText = '$' + price;
     });
     
-    // Mostrar/ocultar nota anual
     annualNotes.forEach(note => {
       note.style.display = isAnnual ? 'block' : 'none';
     });
