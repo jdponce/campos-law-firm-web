@@ -85,56 +85,46 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
+  <!-- Contact Section: Form + Map -->
   <section class="page-content">
     <div class="container">
-      <div class="contact-grid">
+      <div class="contact-top-grid">
         <!-- Form -->
         <div class="contact-form-wrapper">
           <h2>Envíanos un mensaje</h2>
-          <p style="color: #666; margin-bottom: 30px;">Completa el formulario y te contactaremos en menos de 24 horas.</p>
+          <p class="form-subtitle">Completa el formulario y te contactaremos en menos de 24 horas.</p>
           
           <form class="contact-form" id="contactForm">
             <div class="form-row">
-              <div class="form-group">
-                <label for="nombre">Nombre completo</label>
-                <input type="text" id="nombre" placeholder="Tu nombre" required>
-              </div>
+              <label for="nombre">Nombre completo</label>
+              <input type="text" id="nombre" placeholder="Tu nombre" required>
             </div>
             
             <div class="form-row">
-              <div class="form-group">
-                <label for="email-contacto">Correo electrónico</label>
-                <input type="email" id="email-contacto" placeholder="tu@email.com" required>
-              </div>
+              <label for="email-contacto">Correo electrónico</label>
+              <input type="email" id="email-contacto" placeholder="tu@email.com" required>
             </div>
             
             <div class="form-row">
-              <div class="form-group">
-                <label for="telefono">Teléfono</label>
-                <input type="tel" id="telefono" placeholder="+1 (xxx) xxx-xxxx">
-              </div>
+              <label for="telefono">Teléfono</label>
+              <input type="tel" id="telefono" placeholder="+1 (xxx) xxx-xxxx">
             </div>
             
             <div class="form-row">
-              <div class="form-group">
-                <label for="area">Área de interés</label>
-                <select id="area" required>
-                  <option value="">Selecciona un área</option>
-                  <option value="inmigracion">Inmigración</option>
-                  <option value="familia">Derecho Familiar</option>
-                  <option value="criminal">Defensa Criminal</option>
-                  <option value="negocios">Derecho de Negocios</option>
-                  <option value="otro">Otro</option>
-                </select>
-              </div>
+              <label for="area">Área de interés</label>
+              <select id="area" required>
+                <option value="">Selecciona un área</option>
+                <option value="inmigracion">Inmigración</option>
+                <option value="familia">Derecho Familiar</option>
+                <option value="criminal">Defensa Criminal</option>
+                <option value="negocios">Derecho de Negocios</option>
+                <option value="otro">Otro</option>
+              </select>
             </div>
             
             <div class="form-row">
-              <div class="form-group">
-                <label for="mensaje">Cuéntanos tu caso</label>
-                <textarea id="mensaje" rows="5" placeholder="Describe brevemente tu situación..." required></textarea>
-              </div>
+              <label for="mensaje">Cuéntanos tu caso</label>
+              <textarea id="mensaje" rows="5" placeholder="Describe brevemente tu situación..." required></textarea>
             </div>
             
             <button type="submit" class="btn btn-primary btn-submit">
@@ -143,95 +133,105 @@
           </form>
         </div>
         
-        <!-- Map + Info -->
-        <div class="contact-info-wrapper">
-          <!-- Map -->
+        <!-- Map -->
+        <div class="contact-map-wrapper">
           <div class="map-container">
             <iframe 
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.217676750664!2d-73.99796368459418!3d40.71277597932681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown+Law+Associates!5e0!3m2!1sen!2sus!4v1234567890"
               width="100%" 
-              height="300" 
-              style="border:0; border-radius: 12px;" 
+              height="100%" 
+              style="border:0;" 
               allowfullscreen="" 
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade">
             </iframe>
-            <a href="https://maps.google.com" target="_blank" class="map-link">
-              <i class="fas fa-external-link-alt"></i> Abrir en Maps
-            </a>
           </div>
-          
-          <!-- Contact Info Cards -->
-          <div class="contact-cards">
-            <!-- Phone USA New Case -->
-            <div class="contact-card">
-              <div class="contact-card-icon">
-                <i class="fas fa-phone-alt"></i>
-              </div>
-              <div class="contact-card-content">
-                <span class="contact-card-label">Service Line New Case</span>
-                <span class="contact-card-flag">🇺🇸 Estados Unidos</span>
-                <a href="tel:+18449226767" class="contact-card-value">+1 (844) 922-6767</a>
-              </div>
-            </div>
-            
-            <!-- Phone USA Active Cases -->
-            <div class="contact-card">
-              <div class="contact-card-icon">
-                <i class="fas fa-headset"></i>
-              </div>
-              <div class="contact-card-content">
-                <span class="contact-card-label">Client Services (Active Cases)</span>
-                <span class="contact-card-flag">🇺 Estados Unidos</span>
-                <a href="tel:+18338532595" class="contact-card-value">+1 (833) 853-2595</a>
-              </div>
-            </div>
-            
-            <!-- Phone Colombia -->
-            <div class="contact-card">
-              <div class="contact-card-icon">
-                <i class="fas fa-phone-alt"></i>
-              </div>
-              <div class="contact-card-content">
-                <span class="contact-card-label">Service Line Colombia</span>
-                <span class="contact-card-flag">🇨🇴 Colombia</span>
-                <a href="tel:+573007728384" class="contact-card-value">+57 300 772 8384</a>
-              </div>
-            </div>
-            
-            <!-- Phone Mexico -->
-            <div class="contact-card">
-              <div class="contact-card-icon">
-                <i class="fas fa-phone-alt"></i>
-              </div>
-              <div class="contact-card-content">
-                <span class="contact-card-label">Service Line México</span>
-                <span class="contact-card-flag">🇲🇽 México</span>
-                <a href="tel:+523319342017" class="contact-card-value">+52 33 1934 2017</a>
-              </div>
-            </div>
-            
-            <!-- Email -->
-            <div class="contact-card email-card">
-              <div class="contact-card-icon">
-                <i class="fas fa-envelope"></i>
-              </div>
-              <div class="contact-card-content">
-                <span class="contact-card-label">Correo electrónico</span>
-                <a href="mailto:info@camposlawfirm.com" class="contact-card-value">info@camposlawfirm.com</a>
-              </div>
-            </div>
-            
-            <!-- Hours -->
-            <div class="contact-card">
-              <div class="contact-card-icon">
-                <i class="fas fa-clock"></i>
-              </div>
-              <div class="contact-card-content">
-                <span class="contact-card-label">Horario de atención</span>
-                <span class="contact-card-value" style="font-size: 0.95rem;">Lun - Vie: 9:00 AM - 6:00 PM ET</span>
-              </div>
-            </div>
+          <a href="https://maps.google.com" target="_blank" class="map-link">
+            <i class="fas fa-external-link-alt"></i> Abrir en Maps
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Info Section (DEBAJO) -->
+  <section class="contact-info-section">
+    <div class="container">
+      <div class="contact-info-header">
+        <h2>Otras formas de contactarnos</h2>
+        <p>Elige el canal que prefieras. Estamos disponibles en varios países.</p>
+      </div>
+      
+      <div class="contact-cards-grid">
+        <!-- USA New Case -->
+        <div class="contact-card">
+          <div class="contact-card-icon">
+            <i class="fas fa-phone-alt"></i>
+          </div>
+          <div class="contact-card-content">
+            <span class="contact-card-label">Service Line New Case</span>
+            <span class="contact-card-country">🇺🇸 Estados Unidos</span>
+            <a href="tel:+18449226767" class="contact-card-phone">+1 (844) 922-6767</a>
+          </div>
+        </div>
+        
+        <!-- USA Active Cases -->
+        <div class="contact-card">
+          <div class="contact-card-icon">
+            <i class="fas fa-headset"></i>
+          </div>
+          <div class="contact-card-content">
+            <span class="contact-card-label">Client Services (Active Cases)</span>
+            <span class="contact-card-country">🇸 Estados Unidos</span>
+            <a href="tel:+18338532595" class="contact-card-phone">+1 (833) 853-2595</a>
+          </div>
+        </div>
+        
+        <!-- Colombia -->
+        <div class="contact-card">
+          <div class="contact-card-icon">
+            <i class="fas fa-phone-alt"></i>
+          </div>
+          <div class="contact-card-content">
+            <span class="contact-card-label">Service Line Colombia</span>
+            <span class="contact-card-country">🇴 Colombia</span>
+            <a href="tel:+573007728384" class="contact-card-phone">+57 300 772 8384</a>
+          </div>
+        </div>
+        
+        <!-- Mexico -->
+        <div class="contact-card">
+          <div class="contact-card-icon">
+            <i class="fas fa-phone-alt"></i>
+          </div>
+          <div class="contact-card-content">
+            <span class="contact-card-label">Service Line México</span>
+            <span class="contact-card-country">🇽 México</span>
+            <a href="tel:+523319342017" class="contact-card-phone">+52 33 1934 2017</a>
+          </div>
+        </div>
+        
+        <!-- Email -->
+        <div class="contact-card">
+          <div class="contact-card-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div class="contact-card-content">
+            <span class="contact-card-label">Correo electrónico</span>
+            <span class="contact-card-country">Escríbenos cuando quieras</span>
+            <a href="mailto:info@camposlawfirm.com" class="contact-card-phone">info@camposlawfirm.com</a>
+          </div>
+        </div>
+        
+        <!-- Hours -->
+        <div class="contact-card">
+          <div class="contact-card-icon">
+            <i class="fas fa-clock"></i>
+          </div>
+          <div class="contact-card-content">
+            <span class="contact-card-label">Horario de atención</span>
+            <span class="contact-card-country">Lunes a Viernes</span>
+            <span class="contact-card-phone">9:00 AM - 6:00 PM ET</span>
           </div>
         </div>
       </div>
@@ -301,7 +301,7 @@
             <li>
               <div>
                 <strong>Client Services Line (Active Cases):</strong>
-                <span class="flag-emoji">🇸</span> 
+                <span class="flag-emoji">🇺🇸</span> 
                 <a href="tel:+18338532595">+1 (833) 853-2595</a>
               </div>
             </li>
@@ -315,7 +315,7 @@
             <li>
               <div>
                 <strong>Service Line for Mexico:</strong>
-                <span class="flag-emoji">🇽</span> 
+                <span class="flag-emoji">🇲🇽</span> 
                 <a href="tel:+523319342017">+52 33 1934 2017</a>
               </div>
             </li>
@@ -337,7 +337,6 @@
 
   <script src="script.js"></script>
   <script>
-    // Formulario de contacto
     document.addEventListener('DOMContentLoaded', function() {
       const contactForm = document.getElementById('contactForm');
       if (contactForm) {
