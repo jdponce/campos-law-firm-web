@@ -304,17 +304,17 @@ body {
 }
 
 /* ========================================
-   HERO SECTION
+   HERO SECTION - CORREGIDO
 ======================================== */
 .hero {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  text-align: center;
-  padding-top: 100px;
+  text-align: left;
+  padding: 130px 0 80px;
   position: relative;
   overflow: hidden;
-  background: url('images/hero-bg.webp') center/cover no-repeat fixed;
+  background: url('images/hero-image-2.webp') 65% 15% / cover no-repeat;
 }
 
 .hero::before {
@@ -324,24 +324,25 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(38, 50, 66, 0.4);
+  background: linear-gradient(90deg, rgba(38,50,66,0.85) 0%, rgba(38,50,66,0.5) 50%, rgba(38,50,66,0.15) 100%);
   z-index: 1;
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 900px;
-  margin: 0 auto;
+  max-width: 650px;
+  margin: 0 0 0 5%;
   padding: 0 20px;
+  text-align: left;
 }
 
 .hero-content h1 {
   font-size: 3.5rem;
   font-weight: 800;
-  color: var(--white);
-  margin-bottom: 20px;
-  line-height: 1.2;
+  color: white;
+  margin-bottom: 15px;
+  line-height: 1.15;
   opacity: 0;
   animation: fadeInUp 1s ease forwards;
   animation-delay: 0.3s;
@@ -350,16 +351,16 @@ body {
 
 .hero-content h1 span {
   display: block;
-  color: var(--accent-color);
+  color: #667eea;
   font-style: italic;
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 .hero-content p {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: rgba(255,255,255,0.95);
   margin-bottom: 35px;
-  line-height: 1.8;
+  line-height: 1.7;
   opacity: 0;
   animation: fadeInUp 1s ease forwards;
   animation-delay: 0.5s;
@@ -368,7 +369,73 @@ body {
 .hero-buttons {
   display: flex;
   gap: 15px;
-  justify-content: center;
+  justify-content: flex-start;
+  flex-wrap: nowrap; /* CAMBIADO: nowrap para que no se apilen */
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.7s;
+}
+
+.hero-buttons .btn {
+  white-space: nowrap; /* CAMBIADO: para que el texto no se rompa */
+  flex-shrink: 0; /* CAMBIADO: para que no se encojan */
+}
+
+/* Responsive hero */
+@media (max-width: 768px) {
+  .hero {
+    background: url('images/hero-image-2.webp') center 20% / cover no-repeat;
+    padding: 120px 0 60px;
+  }
+  
+  .hero-content {
+    margin: 0;
+    max-width: 100%;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+  
+  .hero-buttons {
+    flex-wrap: wrap; /* En móvil sí se pueden apilar */
+  }
+  
+  .hero-buttons .btn {
+    flex: 1 1 100%; /* Botones full width en móvil */
+    justify-content: center;
+  }
+}
+
+/* Responsive hero */
+@media (max-width: 768px) {
+  .hero {
+    background: url('images/hero-image-2.webp') center 20% / cover no-repeat;
+    padding: 120px 0 60px;
+  }
+  
+  .hero-content {
+    margin: 0;
+    max-width: 100%;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: flex-start;
   flex-wrap: wrap;
   opacity: 0;
   animation: fadeInUp 1s ease forwards;
@@ -2074,5 +2141,101 @@ section {
     width: 40px;
     height: 40px;
     font-size: 1rem;
+  }
+}
+
+/* ========================================
+   HELP SECTION
+======================================== */
+.help-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 60px 0;
+  text-align: center;
+}
+
+.help-content h2 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+.help-content .btn {
+  font-size: 1.1rem;
+  padding: 15px 35px;
+}
+
+/* ========================================
+   MODAL CASE FORM
+======================================== */
+.modal-case {
+  max-width: 500px;
+}
+
+.modal-case h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.modal-case > p {
+  color: #666;
+  margin-bottom: 30px;
+  font-size: 0.95rem;
+}
+
+.form-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 100px;
+  transition: border-color 0.3s;
+}
+
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.modal-buttons .btn {
+  flex: 1;
+  justify-content: center;
+  padding: 14px 25px;
+}
+
+.btn-call {
+  background: transparent;
+  border: 1px solid #ccc; /* Más sutil: 1px en vez de 2px, gris claro */
+  color: var(--primary-color) !important;
+}
+
+.btn-call:hover {
+  background: var(--primary-color);
+  color: white !important;
+  border-color: var(--primary-color);
+}
+
+.btn-send {
+  background: var(--gradient-btn);
+  color: white !important;
+}
+
+/* Responsive help section */
+@media (max-width: 768px) {
+  .help-content h2 {
+    font-size: 2rem;
+  }
+  
+  .modal-buttons {
+    flex-direction: column;
   }
 }

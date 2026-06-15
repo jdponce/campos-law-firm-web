@@ -86,19 +86,32 @@
           <i class="fas fa-phone"></i>
           Cuéntanos Sobre Tu Caso
         </a>
-        <a href="#areas" class="btn btn-outline">
-          Ver Áreas de Práctica
+        <a href="#planes" class="btn btn-outline">
+          <i class="fas fa-shield-alt"></i>
+          Ver Planes Disponibles
         </a>
       </div>
     </div>
   </section>
+
+  <div class="help-section">
+    <div class="container">
+      <div class="help-content">
+        <h2>¿Cómo podemos ayudarte hoy?</h2>
+        <button class="btn btn-primary" id="openCaseModal">
+          <i class="fas fa-comment-dots"></i>
+          Cuéntanos Tu Caso
+        </button>
+      </div>
+    </div>
+  </div>
 
   <!-- Áreas de Práctica -->
   <section id="areas" class="practice-areas">
     <div class="container">
       <div class="section-header animate-on-scroll">
         <h2>Nuestras Áreas Legales</h2>
-        <p>Ofrecemos asesoría legal integral en inmigración, defensa criminal, derecho familiar y derecho de negocios.</p>
+        <p>Ofrecemos asesoría legal integral en inmigración, defensa criminal, derecho familiar y derecho de negocios. Soluciones para personas/familias y negocios.</p>
       </div>
       
       <div class="areas-grid">
@@ -174,7 +187,8 @@
   </section>
 
   <!-- Planes y Precios con Switch -->
-  <section class="pricing">
+  
+  <section id="planes" class="pricing"></section>
     <div class="container">
       <div class="section-header animate-on-scroll">
         <h2>Planes Accesibles para Cada Necesidad</h2>
@@ -196,9 +210,9 @@
             <p>Asesoría legal ilimitada en asuntos personales y familiares con abogados con promedio de 22 años de experiencia.</p>
           </div>
           <div class="pricing-price">
-            <span class="amount" data-monthly="125" data-annual="112.50">$125</span>
+            <span class="amount" data-monthly="39" data-annual="35.10">$39</span>
             <span class="period">/mes</span>
-            <span class="annual-note" style="display: none;">Facturado $1,350/año (Ahorra $150)</span>
+            <span class="annual-note" style="display: none;">Facturado $421.20/año (Ahorra $46.80)</span>
           </div>
           <ul class="pricing-features">
             <li>Consultas legales ilimitadas</li>
@@ -212,13 +226,13 @@
         
         <div class="pricing-card featured animate-on-scroll">
           <div class="pricing-header">
-            <h3>Pequeñas Empresas</h3>
+            <h3>Pequeños Negocios</h3>
             <p>Asesoría legal en asuntos empresariales, incluyendo revisión de documentos, cobranza y más.</p>
           </div>
           <div class="pricing-price">
-            <span class="amount" data-monthly="255" data-annual="229.50">$255</span>
+            <span class="amount" data-monthly="99" data-annual="89.10">$99</span>
             <span class="period">/mes</span>
-            <span class="annual-note" style="display: none;">Facturado $2,754/año (Ahorra $306)</span>
+            <span class="annual-note" style="display: none;">Facturado $1,069.20/año (Ahorra $118.80)</span>
           </div>
           <ul class="pricing-features">
             <li>Todo del plan Personal</li>
@@ -233,7 +247,7 @@
         
         <div class="pricing-card animate-on-scroll">
           <div class="pricing-header">
-            <h3>Empresarial</h3>
+            <h3>Corporativo</h3>
             <p>Beneficios legales y de protección contra robo de identidad diseñados para tus empleados.</p>
           </div>
           <div class="pricing-price">
@@ -246,7 +260,7 @@
             <li>Tranquilidad y seguridad</li>
             <li>Soporte dedicado</li>
           </ul>
-          <a href="contacto.html" class="btn btn-outline" style="color: #263242; border-color: #263242;">Contactar Ventas</a>
+          <a href="contacto.html" class="btn btn-outline" style="color: #263242; border-color: #263242;">Llámanos</a>
         </div>
       </div>
     </div>
@@ -461,5 +475,44 @@
   </footer>
 
   <script src="script.js"></script>
+
+<!-- Modal Case Form -->
+<div class="modal-overlay" id="caseModal">
+  <div class="modal modal-case">
+    <i class="fas fa-times modal-close" id="caseModalClose"></i>
+    <h3>Cuéntanos sobre tu caso</h3>
+    <p>Programa una llamada con un abogado para entender tu caso</p>
+    
+    <form id="caseForm">
+      <div class="form-group">
+        <label for="caseName">Nombre completo *</label>
+        <input type="text" id="caseName" placeholder="Tu nombre" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="casePhone">Teléfono *</label>
+        <input type="tel" id="casePhone" placeholder="+1 (xxx) xxx-xxxx" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="caseDescription">Describe tu caso</label>
+        <textarea id="caseDescription" rows="4" placeholder="Cuéntanos brevemente sobre tu situación legal..."></textarea>
+      </div>
+      
+      <button type="submit" class="btn btn-primary btn-send">
+        <i class="fas fa-paper-plane"></i>
+        Enviar
+      </button>
+      <div class="modal-buttons">
+        <button type="button" class="btn btn-outline btn-call" onclick="window.location.href='#contacto'">
+          <i class="fas fa-phone"></i>
+          Programar Llamada
+        </button>
+
+      </div>
+    </form>
+  </div>
+</div>
+
 </body>
 </html>
