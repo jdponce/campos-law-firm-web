@@ -40,65 +40,57 @@ body {
 }
 
 /* ========================================
-   HEADER - ESPACIADO MEJORADO
+HEADER - ESPACIADO MEJORADO
 ======================================== */
 .header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: var(--white);
-  box-shadow: var(--shadow-sm);
-  z-index: 1000;
-  padding: 15px 0;
-  transition: var(--transition);
+position: fixed;
+top: 0;
+width: 100%;
+background: var(--white);
+box-shadow: var(--shadow-sm);
+z-index: 1000;
+padding: 15px 0;
+transition: var(--transition);
 }
 
 .header.scrolled {
-  padding: 10px 0;
-  box-shadow: var(--shadow-md);
+padding: 10px 0;
+box-shadow: var(--shadow-md);
 }
 
 .header-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 60px;
+display: flex;
+justify-content: flex-start; /* CAMBIADO: de space-between a flex-start */
+align-items: center;
+gap: 40px; /* Reducido de 60px */
 }
 
 .logo {
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
+flex-shrink: 0;
+display: flex;
+align-items: center;
+margin-right: auto; /* ESTO empuja todo lo demás a la derecha */
 }
 
 .logo-img {
-  height: 75px;
-  width: auto;
-  transition: var(--transition);
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.08));
+height: 75px;
+width: auto;
+transition: var(--transition);
+filter: drop-shadow(0 2px 4px rgba(0,0,0,0.08));
 }
 
 .header.scrolled .logo-img {
-  height: 65px;
+height: 65px;
 }
 
 .nav ul {
-  display: flex;
-  gap: 40px;
-  list-style: none;
-  align-items: center;
+display: flex;
+gap: 35px; /* Reducido de 40px */
+list-style: none;
+align-items: center;
 }
 
-.nav a {
-  text-decoration: none;
-  color: var(--text-dark);
-  font-weight: 500;
-  transition: var(--transition);
-  position: relative;
-  padding: 8px 0;
-  font-size: 0.95rem;
-  letter-spacing: 0.3px;
-}
+/* ... el resto del CSS del header sigue igual ... */
 
 .nav a::after {
   content: '';
@@ -2238,4 +2230,11 @@ section {
   .modal-buttons {
     flex-direction: column;
   }
+}
+
+/* FIX: Header no centrado */
+.header .container {
+  max-width: 100%;
+  padding: 0 10%;
+  margin: 0;
 }
